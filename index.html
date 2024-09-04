@@ -305,6 +305,7 @@
             text-align: center;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            z-index: 1; /* Ensure other items are behind */
         }
 
         .carousel-item img {
@@ -326,7 +327,7 @@
 
         .carousel-item.active {
             opacity: 1;
-            transform: rotateY(0deg) translateZ(300px);
+            z-index: 10; /* Make sure the active item is on top */
         }
 
         #session {
@@ -405,8 +406,6 @@
                     <img src="a3.png" alt="Award Image 3" class="award-image">
                     <p>MSME Idea Hackathon 3.0 (Women), Ministry of MSME, GoI</p>
                 </div>
-
-                <!-- Add more carousel items as needed -->
             </div>
         </div>
     </div>
@@ -440,7 +439,6 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
 
 
 
