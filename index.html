@@ -1427,86 +1427,112 @@ container.addEventListener('wheel', (event) => {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"> <!-- Include Bootstrap Icons -->
    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+       body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
 
-        /* Section Title */
-        .section-title {
-            text-align: left;
-            margin-bottom: 40px;
-        }
+.section-title {
+    text-align: left;
+    margin-bottom: 40px;
+}
 
-        .section-title h2 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.section-title h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-        .section-title p {
-            font-size: 16px;
-            color: #6c757d;
-        }
+.section-title p {
+    font-size: 16px;
+    color: #6c757d;
+}
 
-        /* Horizontal Scrolling Container */
-        .scrolling-wrapper {
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 20px 0;
-            position: relative;
-            margin-bottom: 20px; /* Adjusted space as buttons are removed */
-        }
+.scrolling-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    position: relative;
+    margin-bottom: 20px;
+}
 
-        .scrolling-wrapper .icon-box {
-            display: inline-block;
-            width: 300px; /* Adjust width for larger boxes */
-            margin-right: 15px;
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-        }
+.scrolling-wrapper .icon-box {
+    display: inline-block;
+    width: 300px;
+    margin-right: 15px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Prevent overflow */
+}
 
-        .scrolling-wrapper .icon-box:hover {
-            transform: translateY(-10px);
-        }
+.icon-box .icon {
+    font-size: 48px;
+    color: #47b2e4;
+    margin-bottom: 20px;
+}
 
-        .icon-box .icon {
-            font-size: 48px;
-            color: #47b2e4;
-            margin-bottom: 20px;
-        }
+.icon-box h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 
-        .icon-box h4 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+.icon-box p {
+    font-size: 14px;
+    color: #6c757d;
+}
 
-        .icon-box p {
-            font-size: 14px;
-            color: #6c757d;
-        }
+.award-image-container {
+    overflow: hidden;
+    margin: 15px 0;
+    border-radius: 8px;
+}
 
-        /* Award Image */
-        .award-image-container {
-            overflow: hidden;
-            margin: 15px 0;
-            border-radius: 8px;
-        }
+.award-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    display: block; /* Ensure image does not overflow */
+}
 
-        .award-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease-in-out;
-        }
+.award-image:hover {
+    transform: scale(1.1);
+}
 
-        .award-image:hover {
-            transform: scale(1.1);
-        }
+.testimonials-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex; /* Ensure slides are in a row */
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-item {
+    text-align: center;
+}
+
+.testimonial-item p {
+    margin-bottom: 20px;
+}
+
+.testimonial-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
     </style>
 </head>
 <body>
