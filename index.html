@@ -328,10 +328,56 @@
             opacity: 1;
             transform: rotateY(0deg) translateZ(300px);
         }
-       #session {
-    margin-bottom: 0; /* Ensure no additional bottom margin */
-    padding-bottom: 0; /* Ensure no additional bottom padding */
-}
+
+        #session {
+            margin-bottom: 0; /* Ensure no additional bottom margin */
+            padding-bottom: 0; /* Ensure no additional bottom padding */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 24px;
+            }
+
+            .section-title p {
+                font-size: 14px;
+            }
+
+            .carousel-item h4 {
+                font-size: 18px;
+            }
+
+            .carousel-item p {
+                font-size: 12px;
+            }
+
+            .carousel-item img {
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 20px;
+            }
+
+            .section-title p {
+                font-size: 12px;
+            }
+
+            .carousel-item h4 {
+                font-size: 16px;
+            }
+
+            .carousel-item p {
+                font-size: 10px;
+            }
+
+            .carousel-item img {
+                max-width: 60%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -340,21 +386,18 @@
     <div class="container">
         <div class="section-title">
             <h2>Awards & Achievements</h2>
-            
         </div>
 
         <div class="carousel-container">
             <div class="carousel">
-                <div class="carousel-item">
-                  <h4>Winner – 15 Lakh Grant</h4>
+                <div class="carousel-item active">
+                    <h4>Winner – 15 Lakh Grant</h4>
                     <img src="a1.png" alt="Award Image 1" class="award-image">
                     <p>MSME Idea Hackathon 2.0, Ministry of MSME, GoI</p>
                 </div>
                 <div class="carousel-item">
-                  <h4>Financial Sanction of 1 Lakh
-</h4>
+                    <h4>Financial Sanction of 1 Lakh</h4>
                     <img src="a2.jpg" alt="Award Image 2" class="award-image">
-                    
                     <p>Technology Intervention Project, UBA – Unnat Bharat Abhiyan, GoI</p>
                 </div>
                 <div class="carousel-item">
@@ -397,7 +440,6 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
 
 
 
