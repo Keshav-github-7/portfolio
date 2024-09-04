@@ -1418,7 +1418,7 @@ container.addEventListener('wheel', (event) => {
 <!--------------------------------- Start session Section ------------------------------------------------------>
 
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1426,113 +1426,77 @@ container.addEventListener('wheel', (event) => {
     <title>Auto-scrolling Awards Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"> <!-- Include Bootstrap Icons -->
-   <style>
-       body {
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Prevent horizontal overflow */
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
 
-.section-title {
-    text-align: left;
-    margin-bottom: 40px;
-}
+        .section-title {
+            text-align: left;
+            margin-bottom: 40px;
+        }
 
-.section-title h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        .section-title h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-.section-title p {
-    font-size: 16px;
-    color: #6c757d;
-}
+        .section-title p {
+            font-size: 16px;
+            color: #6c757d;
+        }
 
-.scrolling-wrapper {
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 20px 0;
-    position: relative;
-    margin-bottom: 20px;
-}
+        .scrolling-wrapper {
+            overflow: auto; /* Allow manual scrolling */
+            white-space: nowrap;
+            padding: 20px 0;
+            position: relative;
+            margin-bottom: 20px;
+            scroll-behavior: smooth; /* Smooth scrolling behavior */
+        }
 
-.scrolling-wrapper .icon-box {
-    display: inline-block;
-    width: 300px;
-    margin-right: 15px;
-    background: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    overflow: hidden; /* Prevent overflow */
-}
+        .scrolling-wrapper .item {
+            display: inline-block;
+            width: 300px;
+            margin-right: 15px;
+            text-align: center;
+            cursor: pointer; /* Indicate clickable area */
+        }
 
-.icon-box .icon {
-    font-size: 48px;
-    color: #47b2e4;
-    margin-bottom: 20px;
-}
+        .item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.icon-box h4 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
+        .item img:hover {
+            transform: scale(1.1);
+        }
 
-.icon-box p {
-    font-size: 14px;
-    color: #6c757d;
-}
+        .item h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #333; /* Set text color for visibility */
+        }
 
-.award-image-container {
-    overflow: hidden;
-    margin: 15px 0;
-    border-radius: 8px;
-}
+        .item p {
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 10px;
+        }
 
-.award-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-    display: block; /* Ensure image does not overflow */
-}
-
-.award-image:hover {
-    transform: scale(1.1);
-}
-
-.testimonials-slider {
-    position: relative;
-    overflow: hidden;
-}
-
-.swiper-wrapper {
-    display: flex; /* Ensure slides are in a row */
-}
-
-.swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.testimonial-item {
-    text-align: center;
-}
-
-.testimonial-item p {
-    margin-bottom: 20px;
-}
-
-.testimonial-item a {
-    text-decoration: none;
-    color: #007bff;
-}
-
+        /* Hide scrollbar */
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .scrolling-wrapper {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
     </style>
 </head>
 <body>
@@ -1544,100 +1508,82 @@ container.addEventListener('wheel', (event) => {
         </div>
 
         <div class="scrolling-wrapper" id="scrollingWrapper">
-            <div class="scrolling-content">
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">Resource Person</a></h4>
-                    <!-- Award Image -->
-                    <div class="award-image-container">
-                        <img src="s1.jpg" alt="Award Image 1" class="award-image">
-                    </div>
-                    <p class="description">I & E Workshop @ CMR University</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s1.jpg">
+                <img src="s1.jpg" alt="Award Image 1">
+                <h4 class="title"><a href="#">Resource Person</a></h4>
+                <p class="description">I & E Workshop @ CMR University</p>
+            </div>
 
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">Mentor Expert Visit</a></h4>
-                    <!-- Award Image -->
-                  <div class="award-image-container">
-                        <img src="s2.jpeg" alt="Award Image 2" class="award-image">
-                    </div>
-                    <p class="description">Progress Monitoring and </p> <br> <p>Impact Measurement</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s2.jpeg">
+                <img src="s2.jpeg" alt="Award Image 2">
+                <h4 class="title"><a href="#">Mentor Expert Visit</a></h4>
+                <p class="description">Progress Monitoring and <br>Impact Measurement</p>
+            </div>
 
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">Guest Lecture</a></h4>
-                    <!-- Award Image -->
-                   <div class="award-image-container">
-                        <img src="s3.jpg" alt="Award Image 3" class="award-image">
-                    </div>
-                    <p class="description">Patent Drafting & Filing @ </p><br><p>MBA, CMRIT</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s3.jpg">
+                <img src="s3.jpg" alt="Award Image 3">
+                <h4 class="title"><a href="#">Guest Lecture</a></h4>
+                <p class="description">Patent Drafting & Filing @ <br>MBA, CMRIT</p>
+            </div>
 
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">Startup and Incubation</a></h4>
-                    <!-- Award Image -->
-                    <div class="award-image-container">
-                        <img src="s4.png" alt="Award Image 4" class="award-image">
-                    </div>
-                    <p class="description">IIC Reactivation Program for</p><br><p> 9 Non IIC Colleges</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s4.png">
+                <img src="s4.png" alt="Award Image 4">
+                <h4 class="title"><a href="#">Startup and Incubation</a></h4>
+                <p class="description">IIC Reactivation Program for<br>9 Non IIC Colleges</p>
+            </div>
 
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">Resource Person</a></h4>
-                    <!-- Award Image -->
-                  <div class="award-image-container">
-                        <img src="s5.png" alt="Award Image 5" class="award-image">
-                    </div>
-                    <p class="description">Entrepreneurship Certification Program </p><br><p> @ CMR University</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s5.png">
+                <img src="s5.png" alt="Award Image 5">
+                <h4 class="title"><a href="#">Resource Person</a></h4>
+                <p class="description">Entrepreneurship Certification Program <br>@ CMR University</p>
+            </div>
 
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">Resource Person</a></h4>
-                    <!-- Award Image -->
-                 <div class="award-image-container">
-                        <img src="s6.jpg" alt="Award Image 6" class="award-image">
-                    </div>
-                    <p class="description">Steps in Entrepreneurial Process, </p><br><p>PSR Engineering College, Tamilnadu</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s6.jpg">
+                <img src="s6.jpg" alt="Award Image 6">
+                <h4 class="title"><a href="#">Resource Person</a></h4>
+                <p class="description">Steps in Entrepreneurial Process, <br>PSR Engineering College, Tamilnadu</p>
+            </div>
 
-              <!-- Duplicate content for seamless looping -->
-               <div class="icon-box">
-                    <h4 class="title"><a href="#">Cheshire Homes, Bangalore</a></h4>
-                   <!-- Award Image -->
-                   <div class="award-image-container">
-                       <img src="s7.jpg" alt="Award Image 1" class="award-image">
-                    </div>
-                    <p class="description"> Exposure/Field Visit to </p>p<br><p>identify Problem Statemtents
-</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s7.jpg">
+                <img src="s7.jpg" alt="Award Image 7">
+                <h4 class="title"><a href="#">Cheshire Homes, Bangalore</a></h4>
+                <p class="description">Exposure/Field Visit to <br>identify Problem Statements</p>
+            </div>
 
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">ATL Tinkering Day
-</a></h4>
-                    <!-- Award Image -->
-                   <div class="award-image-container">
-                        <img src="s8.png" alt="Award Image 2" class="award-image">
-                    </div>
-                    <p class="description"> National Center for Excellence </p><br><p> School, Bangalore</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s8.png">
+                <img src="s8.png" alt="Award Image 8">
+                <h4 class="title"><a href="#">ATL Tinkering Day</a></h4>
+                <p class="description">National Center for Excellence <br>School, Bangalore</p>
+            </div>
 
-                <div class="icon-box">
-                    <h4 class="title"><a href="#">I & E Training</a></h4>
-                    <!-- Award Image -->
-                   <div class="award-image-container">
-                        <img src="s9.jpeg" alt="Award Image 3" class="award-image">
-                    </div>
-                    <p class="description">Patent Drafting & Filing </p><br><p> @ CSE, CMRIT</p>
-                </div>
+            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="s9.jpeg">
+                <img src="s9.jpeg" alt="Award Image 9">
+                <h4 class="title"><a href="#">I & E Training</a></h4>
+                <p class="description">Patent Drafting & Filing <br>@ CSE, CMRIT</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Modal Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const wrapper = document.getElementById('scrollingWrapper');
-        const content = document.querySelector('.scrolling-content');
         const scrollAmount = 1; // Adjust scrolling speed
         const delay = 10; // Delay between scrolls
 
@@ -1648,7 +1594,7 @@ container.addEventListener('wheel', (event) => {
             if (isScrolling) return;
             isScrolling = true;
             scrollInterval = setInterval(() => {
-                if (wrapper.scrollLeft >= content.scrollWidth / 2) {
+                if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
                     wrapper.scrollLeft = 0;
                 } else {
                     wrapper.scrollLeft += scrollAmount;
@@ -1665,15 +1611,22 @@ container.addEventListener('wheel', (event) => {
         wrapper.addEventListener('mouseout', startScrolling);
 
         startScrolling();
+
+        // Handle image click event
+        const items = document.querySelectorAll('.item');
+        const modalImage = document.getElementById('modalImage');
+
+        items.forEach(item => {
+            item.addEventListener('click', function() {
+                const imageSrc = item.getAttribute('data-image');
+                modalImage.src = imageSrc;
+            });
+        });
     });
 </script>
 
 </body>
-</html>   
-
-
-
-
+</html>
 
 
 
