@@ -1,0 +1,240 @@
+!-------------------- research Section ---------------------------------------
+
+section id=research class=research
+      div class=research
+ style
+        body {
+            font-family Arial, sans-serif;
+        }
+
+         Tab styling 
+        .tab {
+            overflow hidden;
+            border-bottom 1px solid #ccc;
+        }
+
+        .tab button {
+            background-color inherit;
+            border none;
+            outline none;
+            cursor pointer;
+            padding 14px 16px;
+            transition 0.3s;
+            font-size 17px;
+        }
+
+        .tab buttonhover {
+            background-color #ddd;
+        }
+
+        .tab button.active {
+            background-color #ccc;
+        }
+
+         Tab content 
+        .tab-content {
+            display none;
+            padding 20px;
+            border 1px solid #ccc;
+            border-top none;
+        }
+
+        .tab-content.active {
+            display block;
+        }
+
+         Research Papers container styling 
+        .papers-container {
+            display flex;
+            overflow-x auto;
+            gap 20px;
+            padding 20px 0;
+        }
+
+        .paper {
+            width 200px;
+            height 300px;
+            perspective 1000px;
+            transition transform 0.5s;
+        }
+
+        .paperhover .paper-inner {
+            transform rotateY(180deg);
+        }
+
+        .paper-inner {
+            width 100%;
+            height 100%;
+            transition transform 0.5s;
+            transform-style preserve-3d;
+            position relative;
+            cursor pointer;
+        }
+
+        .paper-front,
+        .paper-back {
+            position absolute;
+            width 100%;
+            height 100%;
+            backface-visibility hidden;
+            display flex;
+            align-items center;
+            justify-content center;
+            border 1px solid #ccc;
+            border-radius 8px;
+            box-shadow 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color #fff;
+        }
+
+        .paper-back {
+            transform rotateY(180deg);
+        }
+
+         Modal styling for research papers 
+        .modal-paper {
+            display none;
+            position fixed;
+            z-index 1;
+            left 0;
+            top 0;
+            width 100%;
+            height 100%;
+            overflow auto;
+            background-color rgba(0, 0, 0, 0.9);
+            padding 20px;
+        }
+
+        .modal-paper-content {
+            margin 5% auto;
+            width 80%;
+            max-width 900px;
+            background #fff;
+            padding 20px;
+            border-radius 8px;
+            position relative;
+        }
+
+        .close {
+            position absolute;
+            top 15px;
+            right 35px;
+            color #000;
+            font-size 40px;
+            font-weight bold;
+            cursor pointer;
+        }
+
+        .closehover {
+            color #aaa;
+        }
+    style
+head
+body
+
+    !-- Tabs --
+    div class=tab
+        button class=tablinks onclick=openTab(event, 'ResearchPapers') id=defaultTabResearch Papersbutton
+    div
+
+    !-- Research Papers Tab content --
+    div id=ResearchPapers class=tab-content
+        h2Research Papersh2
+        div class=papers-container
+            div class=paper onclick=openPaper('paper1.html')
+                div class=paper-inner
+                    div class=paper-front
+                        h3Paper 1h3
+                    div
+                    div class=paper-back
+                        pClick to read morep
+                    div
+                div
+            div
+            div class=paper onclick=openPaper('paper2.html')
+                div class=paper-inner
+                    div class=paper-front
+                        h3Paper 2h3
+                    div
+                    div class=paper-back
+                        pClick to read morep
+                    div
+                div
+            div
+            div class=paper onclick=openPaper('paper3.html')
+                div class=paper-inner
+                    div class=paper-front
+                        h3Paper 3h3
+                    div
+                    div class=paper-back
+                        pClick to read morep
+                    div
+                div
+            div
+            div class=paper onclick=openPaper('paper4.html')
+                div class=paper-inner
+                    div class=paper-front
+                        h3Paper 4h3
+                    div
+                    div class=paper-back
+                        pClick to read morep
+                    div
+                div
+            div
+            div class=paper onclick=openPaper('paper5.html')
+                div class=paper-inner
+                    div class=paper-front
+                        h3Paper 5h3
+                    div
+                    div class=paper-back
+                        pClick to read morep
+                    div
+                div
+            div
+        div
+    div
+
+    !-- Modal for Research Papers --
+    div id=paperModal class=modal-paper
+        span class=close onclick=closePaperModal()&times;span
+        div class=modal-paper-content id=modalContent
+            !-- Content will be loaded dynamically --
+        div
+    div
+
+    script
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+             Hide all tab content
+            tabcontent = document.getElementsByClassName(tab-content);
+            for (i = 0; i  tabcontent.length; i++) {
+                tabcontent[i].style.display = none;
+            }
+
+             Remove the active class from all buttons
+            tablinks = document.getElementsByClassName(tablinks);
+            for (i = 0; i  tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace( active, );
+            }
+
+             Show the current tab content and add active class to the button
+            document.getElementById(tabName).style.display = block;
+            evt.currentTarget.className +=  active;
+        }
+
+        function openPaper(url) {
+            window.location.href = url;  Redirect to the detailed paper page
+        }
+
+        function closePaperModal() {
+            var modal = document.getElementById(paperModal);
+            modal.style.display = none;
+        }
+
+         Set the default open tab
+        document.getElementById(defaultTab).click();
+    script
+
+
+
+!-------------------------------------------- End research Section -------------------------------------------------------------------

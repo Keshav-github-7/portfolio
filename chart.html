@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Bar Chart</title>
+    <!-- Include Chart.js and plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sgratzl/chartjs-plugin-3d"></script>
+</head>
+<body>
+    <!-- Table with 4 rows and 3 columns -->
+    <div style="width: 60%; margin: auto; margin-bottom: 20px;">
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
+            <tr>
+                <th></th>
+                <th>All</th>
+                <th>Since 2019</th>
+            </tr>
+            <tr>
+                <td>Citations</td>
+                <td>119</td>
+                <td>106</td>
+            </tr>
+            <tr>
+                <td>h-index</td>
+                <td>6</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>i10-index</td>
+                <td>4</td>
+                <td>3</td>
+            </tr>
+           
+        </table>
+    </div>
+
+    <!-- Canvas for the chart -->
+    <div style="width: 60%; margin: auto; height: 500px;">
+        <canvas id="my3dBarChart"></canvas>
+    </div>
+
+    <script>
+        // Sample data
+        const categories = ['2010','2012','2014','2015','2016','2017', '2019', '2020', '2021', '2022', '2023', '2024'];
+        const values = [1, 1, 2,1,2,3,7,12,15,18,32,21];
+
+        // Create the 3D Bar Chart
+        const ctx = document.getElementById('my3dBarChart').getContext('2d');
+        const my3dBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: categories,
+                datasets: [{
+                    label: 'Values',
+                    data: values,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: '#000',
+                        font: {
+                            weight: 'bold'
+                        }
+                    },
+                    '3d': {
+                        enabled: true,
+                        perspective: 1000,
+                        axisThickness: 20,
+                        shadow: {
+                            enabled: true,
+                            color: 'rgba(0, 0, 0, 0.3)',
+                            offset: {
+                                x: 4,
+                                y: 4
+                            },
+                            blur: 5
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(200, 200, 200, 0.2)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 20,
+                        right: 30,
+                        bottom: 10,
+                        left: 20
+                    }
+                },
+                animation: {
+                    duration: 2000
+                }
+            }
+        });
+    </script>
+</body>
+</html>
