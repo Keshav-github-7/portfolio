@@ -1471,7 +1471,12 @@ container.addEventListener('wheel', (event) => {
 
 
   
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"> <!-- Include Bootstrap Icons -->
     <style>
         body {
@@ -1514,7 +1519,8 @@ container.addEventListener('wheel', (event) => {
 
         .item img {
             width: 100%;
-            height: auto;
+            height: 200px; /* Ensure consistent height */
+            object-fit: cover; /* Ensure image covers the area without distortion */
             border-radius: 8px;
             transition: transform 0.3s ease-in-out;
         }
@@ -1564,132 +1570,109 @@ container.addEventListener('wheel', (event) => {
         </div>
 
         <div class="scrolling-wrapper" id="scrollingWrapper">
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i1.jpg">
-              <h4 class="title"><a href="#">Resource Person</a></h4>  
-              <img src="i1.jpg" alt="Award Image 1">
-                
-                <p class="description">I & E Workshop <br>@ CMR University</p>
-            </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i2.jpg">
-              <h4 class="title"><a href="#">Mentor Expert Visit</a></h4>  
-              <img src="i2.jpg" alt="Award Image 2">
-                
+          <div class="item" data-image="i1.jpg">
+            <h4 class="title"><a href="#">I & E Training</a></h4> 
+            <img src="i1.jpg" alt="Award Image 1">
+            <p class="description">Patent Drafting & Filing <br>@ CSE, CMRIT</p>
+        </div>
+            <div class="item" data-image="i2.jpg">
+                <h4 class="title"><a href="#">Mentor Expert Visit</a></h4>  
+                <img src="i2.jpg" alt="Award Image 2">
                 <p class="description">Progress Monitoring & Impact <br>Measurement @ KLE College</p>
             </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i3.jpg">
-              <h4 class="title"><a href="#">Guest Lecture</a></h4>  
-              <img src="i3.jpg" alt="Award Image 3">
-                
+            <div class="item" data-image="i3.jpg">
+                <h4 class="title"><a href="#">Guest Lecture</a></h4>  
+                <img src="i3.jpg" alt="Award Image 3">
                 <p class="description">Patent Drafting & Filing @ <br>MBA, CMRIT</p>
             </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i4.png">
-              <h4 class="title"><a href="#">Startup & Incubation</a></h4>
-              <img src="i4.png" alt="Award Image 4">
-                
+            <div class="item" data-image="i4.png">
+                <h4 class="title"><a href="#">Startup & Incubation</a></h4>
+                <img src="i4.png" alt="Award Image 4">
                 <p class="description">IIC Reactivation Program for<br>9 Non IIC Colleges</p>
             </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i5.png">
-              <h4 class="title"><a href="#">Resource Person</a></h4>  
-              <img src="i5.png" alt="Award Image 5">
-                
+            <div class="item" data-image="i5.png">
+                <h4 class="title"><a href="#">Resource Person</a></h4>  
+                <img src="i5.png" alt="Award Image 5">
                 <p class="description">Entrepreneurship Certification Program <br>@ CMR University</p>
             </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i6.jpg">
-              <h4 class="title"><a href="#">Expert Talk</a></h4>  
-              <img src="i6.jpg" alt="Award Image 6">
-                
+            <div class="item" data-image="i6.jpg">
+                <h4 class="title"><a href="#">Expert Talk</a></h4>  
+                <img src="i6.jpg" alt="Award Image 6">
                 <p class="description">Steps in Entrepreneurial Process, <br>PSR Engineering College, Tamilnadu</p>
             </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i7.jpg">
-              <h4 class="title"><a href="#">Field Visit</a></h4>  
-              <img src="i7.jpg" alt="Award Image 7">
-                
+            <div class="item" data-image="i7.jpg">
+                <h4 class="title"><a href="#">Field Visit</a></h4>  
+                <img src="i7.jpg" alt="Award Image 7">
                 <p class="description">Cheshire Homes to<br>identify Problem Statements</p>
             </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i8.png">
-              <h4 class="title"><a href="#">ATL Tinkering Day</a></h4>  
-              <img src="i8.png" alt="Award Image 8">
-                
+            <div class="item" data-image="i8.png">
+                <h4 class="title"><a href="#">ATL Tinkering Day</a></h4>  
+                <img src="i8.png" alt="Award Image 8">
                 <p class="description">National Center for Excellence <br>School, Bangalore</p>
             </div>
 
-            <div class="item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="i9.jpeg">
-              <h4 class="title"><a href="#">I & E Training</a></h4> 
-              <img src="i9.jpeg" alt="Award Image 9">
-                
+            <div class="item" data-image="i9.jpeg">
+                <h4 class="title"><a href="#">I & E Training</a></h4> 
+                <img src="i9.jpeg" alt="Award Image 9">
                 <p class="description">Patent Drafting & Filing <br>@ CSE, CMRIT</p>
             </div>
+
+           
         </div>
     </div>
 </section>
 
-<!-- Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img id="modalImage" src="" alt="Modal Image" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const wrapper = document.getElementById('scrollingWrapper');
-        const scrollAmount = 1; // Adjust scrolling speed
-        const delay = 10; // Delay between scrolls
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.getElementById('scrollingWrapper');
+    const scrollAmount = 1; // Adjust scrolling speed
+    const delay = 10; // Delay between scrolls
 
-        let scrollInterval;
-        let isScrolling = false;
+    let scrollInterval;
+    let isScrolling = false;
 
-        function startScrolling() {
-            if (isScrolling) return;
-            isScrolling = true;
-            scrollInterval = setInterval(() => {
-                if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
-                    wrapper.scrollLeft = 0;
-                } else {
-                    wrapper.scrollLeft += scrollAmount;
-                }
-            }, delay);
-        }
+    function startScrolling() {
+        if (isScrolling) return;
+        isScrolling = true;
+        scrollInterval = setInterval(() => {
+            if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
+                wrapper.scrollLeft = 0;
+            } else {
+                wrapper.scrollLeft += scrollAmount;
+            }
+        }, delay);
+    }
 
-        function stopScrolling() {
-            clearInterval(scrollInterval);
-            isScrolling = false;
-        }
+    function stopScrolling() {
+        clearInterval(scrollInterval);
+        isScrolling = false;
+    }
 
-        wrapper.addEventListener('mouseover', stopScrolling);
-        wrapper.addEventListener('mouseout', startScrolling);
+    wrapper.addEventListener('mouseover', stopScrolling);
+    wrapper.addEventListener('mouseout', startScrolling);
 
-        startScrolling();
+    startScrolling();
 
-        // Handle image click event
-        const items = document.querySelectorAll('.item');
-        const modalImage = document.getElementById('modalImage');
+    // Handle image click event
+    const items = document.querySelectorAll('.item');
 
-        items.forEach(item => {
-            item.addEventListener('click', function() {
-                const imageSrc = item.getAttribute('data-image');
-                modalImage.src = imageSrc;
-            });
+    items.forEach(item => {
+        item.addEventListener('click', function() {
+            const imageSrc = item.getAttribute('data-image');
+            window.location.href = `image-viewer.html?image=${encodeURIComponent(imageSrc)}`;
         });
     });
+});
 </script>
-
+</body>
+</html>
 
 
 
