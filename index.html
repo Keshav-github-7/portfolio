@@ -104,7 +104,7 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>7 January 1987</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Mobile:</strong> <span>+ 91 8056805616</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://keshav-github-7.github.io/portfolio/ </span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="https://keshav-github-7.github.io/portfolio/">https://keshav-github-7.github.io/portfolio/</a> </span></li>
                   
                 </ul>
               </div>
@@ -1363,86 +1363,104 @@ container.addEventListener('wheel', (event) => {
                       </table>
                   </div>
               
-                  <!-- Canvas for the chart -->
-                  <div style="width: 100%; margin: auto; height: 500px;">
-                      <canvas id="my3dBarChart"></canvas>
-                  </div>
+                <!-- Canvas for the chart -->
+    <div style="width: 100%; margin: auto; height: 500px;">
+        <canvas id="my3dBarChart"></canvas>
+    </div>
+
+    <script>
+        // Sample data
+        const categories = ['2010','2012','2014','2015','2016','2017', '2019', '2020', '2021', '2022', '2023', '2024'];
+        const values = [1, 1, 2,1,2,3,7,12,15,18,32,21];
+
+        // Create the 3D Bar Chart
+        const ctx = document.getElementById('my3dBarChart').getContext('2d');
+        const my3dBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: categories,
+                datasets: [{
+                    label: 'No. of Citations',
+                    data: values,
+                    backgroundColor: 'rgba(0, 128, 0, 0.6)', // Green bars
+                    borderColor: 'rgba(0, 128, 0, 1)', // Solid green borders
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: 'rgba(0, 128, 0, 1)', // Green labels
+                        font: {
+                            weight: 'bold'
+                        }
+                    },
+                    '3d': {
+                        enabled: true,
+                        perspective: 1000,
+                        axisThickness: 20,
+                        shadow: {
+                            enabled: true,
+                            color: 'rgba(0, 0, 0, 0.3)',
+                            offset: {
+                                x: 4,
+                                y: 4
+                            },
+                            blur: 5
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(200, 200, 200, 0.2)'
+                        }
+                    },
+                    x: {
+    grid: {
+        display: false
+    },
+    ticks: {
+        autoSkip: false // Ensure all x-axis labels are displayed
+    }
+}
+
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 20,
+                        right: 30,
+                        bottom: 10,
+                        left: 20
+                    }
+                },
+                animation: {
+                    duration: 2000
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
               
-                  <script>
-                      // Sample data
-                      const categories = ['2010','2012','2014','2015','2016','2017', '2019', '2020', '2021', '2022', '2023', '2024'];
-                      const values = [1, 1, 2,1,2,3,7,12,15,18,32,21];
-              
-                      // Create the 3D Bar Chart
-                      const ctx = document.getElementById('my3dBarChart').getContext('2d');
-                      const my3dBarChart = new Chart(ctx, {
-                          type: 'bar',
-                          data: {
-                              labels: categories,
-                              datasets: [{
-                                  label: 'Citations',
-                                  data: values,
-                                  backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                                  borderColor: 'rgba(75, 192, 192, 1)',
-                                  borderWidth: 1
-                              }]
-                          },
-                          options: {
-                              plugins: {
-                                  datalabels: {
-                                      anchor: 'end',
-                                      align: 'end',
-                                      color: '#000',
-                                      font: {
-                                          weight: 'bold'
-                                      }
-                                  },
-                                  '3d': {
-                                      enabled: true,
-                                      perspective: 1000,
-                                      axisThickness: 20,
-                                      shadow: {
-                                          enabled: true,
-                                          color: 'rgba(0, 0, 0, 0.3)',
-                                          offset: {
-                                              x: 4,
-                                              y: 4
-                                          },
-                                          blur: 5
-                                      }
-                                  }
-                              },
-                              scales: {
-                                  y: {
-                                      beginAtZero: true,
-                                      grid: {
-                                          color: 'rgba(200, 200, 200, 0.2)'
-                                      }
-                                  },
-                                  x: {
-                                      grid: {
-                                          display: false
-                                      }
-                                  }
-                              },
-                              responsive: true,
-                              maintainAspectRatio: false,
-                              layout: {
-                                  padding: {
-                                      top: 20,
-                                      right: 30,
-                                      bottom: 10,
-                                      left: 20
-                                  }
-                              },
-                              animation: {
-                                  duration: 2000
-                              }
-                          }
-                      });
-                  </script>
-              </body>
-              </html>
+              <img src="Logo.png" alt="Static Image" style="width: 150px; height: 50px; display: block; margin: 0 auto;">
+
+
+                <img src="QR.png" alt="Static Image" style="width: 250px;  display: block; margin: 0 auto;">
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
               
                 <img src="Logo.png" alt="Static Image" style="width: 150px; height: 50px; display: block; margin: 0 auto;">
 
