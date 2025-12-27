@@ -583,25 +583,69 @@
         </div>
     
         <script>
-            // Search Functionality
-            document.getElementById('search-input').addEventListener('keyup', function() {
-                const searchValue = this.value.toLowerCase();
-                const rows = document.querySelectorAll('#data-table tbody tr');
-    
-                rows.forEach(row => {
-                    const cells = row.querySelectorAll('td');
-                    let match = false;
-    
-                    cells.forEach(cell => {
-                        if (cell.textContent.toLowerCase().indexOf(searchValue) > -1) {
-                            match = true;
-                        }
-                    });
-    
-                    row.style.display = match ? '' : 'none';
-                });
+    // Convert DD/MM/YYYY → Date object
+    function parseDMY(dateStr) {
+        if (!dateStr) return new Date(0);
+        const parts = dateStr.trim().split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+
+    // Renumber Sl. No column
+    function renumberSerial() {
+        const rows = document.querySelectorAll('#data-table tbody tr');
+        let count = 1;
+
+        rows.forEach(row => {
+            if (row.style.display !== 'none') {
+                row.cells[0].textContent = count++;
+            }
+        });
+    }
+
+    // Sort by Date of Filing (DESC)
+    function sortByDateOfFiling() {
+        const table = document.getElementById('data-table');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+
+        rows.sort((a, b) => {
+            const dateA = parseDMY(a.cells[3].textContent);
+            const dateB = parseDMY(b.cells[3].textContent);
+            return dateB - dateA; // Latest first
+        });
+
+        rows.forEach(row => tbody.appendChild(row));
+        renumberSerial();
+    }
+
+    // Initial sort on page load
+    document.addEventListener('DOMContentLoaded', sortByDateOfFiling);
+
+    // Search Functionality
+    document.getElementById('search-input').addEventListener('keyup', function () {
+        const searchValue = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#data-table tbody tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            let match = false;
+
+            cells.forEach(cell => {
+                if (cell.textContent.toLowerCase().includes(searchValue)) {
+                    match = true;
+                }
             });
-        </script>
+
+            row.style.display = match ? '' : 'none';
+        });
+
+        sortByDateOfFiling();
+    });
+</script>
+
     </body>
     </html>
     
